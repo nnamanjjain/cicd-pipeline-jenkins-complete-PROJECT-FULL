@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout-Repo-Remote'){
             steps{
-                git ''
+                git 'https://github.com/nnamanjjain/cicd-pipeline-jenkins-complete-PROJECT-FULL.git'
             }
         }
         stage('Build') {
