@@ -1,10 +1,17 @@
 pipeline {
-    agent any
+    agent {
+        label 'node-1'
+    }
     environment {
         //be sure to replace "bhavukm" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "nnamanjjain/train-schedule"
     }
     stages {
+        stage('Checkout-Repo-Remote'){
+            steps{
+                git ''
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Running build automation'
